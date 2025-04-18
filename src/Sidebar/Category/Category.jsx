@@ -3,7 +3,7 @@ import Input from "../../components/Input";
 
 const Category = ({ handleChange }) => {
   return (
-    <div>
+    <div className="cat">
       <h2 className="sidebar-title">Category</h2>
       <div>
         <label className="sidebar-label-container">

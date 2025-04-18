@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Navigation from "./Navigation/Nav";
 import Products from "./Products/Products";
@@ -13,6 +13,17 @@ function App() {
 
   // ----------- Input Filter -----------
   const [query, setQuery] = useState("");
+
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.body.className = "";
+    document.body.classList.add(`${theme}-mode`);
+  });
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -71,6 +82,11 @@ function App() {
 
   return (
     <>
+      <div className="theme-switcher">
+        <button className="toggle-btn" onClick={toggleTheme}>
+          {theme === "light" ? "Dark Mode" : "Light Mode"}
+        </button>
+      </div>
       <Sidebar handleChange={handleChange} />
       <Navigation query={query} handleInputChange={handleInputChange} />
       <Recommended handleClick={handleClick} />

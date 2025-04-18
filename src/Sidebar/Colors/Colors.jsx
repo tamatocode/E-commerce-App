@@ -3,7 +3,7 @@ import Input from "../../components/Input";
 
 const Colors = ({handleChange}) => {
   return (
-    <div>
+    <div className="col">
       <h2 className="sidebar-title price-title">Color</h2>
       <label className="sidebar-label-container">
         <input onChange={handleChange} type="radio" value="" name="test1" />
