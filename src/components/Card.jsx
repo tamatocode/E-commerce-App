@@ -3,9 +3,9 @@ import { BsFillBagHeartFill } from "react-icons/bs";
 
 const Card = ({ img, title, star, reviews, prevPrice, newPrice }) => {
   return (
-    <div>
-      {" "}
-      <section className="card">
+
+      <div className="product-grid">
+      <section className="product-card">
         <img className="card-img" src={img} alt={title} />
         <div className="card-details">
           <h3 className="card-title">{title} </h3>
@@ -22,7 +22,7 @@ const Card = ({ img, title, star, reviews, prevPrice, newPrice }) => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
   );
 };
 
